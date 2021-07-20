@@ -23,10 +23,17 @@ body {
     background-color: var(--light-cyan-1);
     color: var(--very-dark-cyan);
     letter-spacing: 1.5px;
+    user-select: none;
 }
 
 .spacing{
     margin: 30px;
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 
 /* input-box */
@@ -116,15 +123,14 @@ h5{
     font-family: "Space Mono",
     monospace;
     border-radius: 10px;
+    margin-top: 30px;
 }
 
 .box-result{
     display: grid;
     grid-template-columns: 1fr 1fr;
-}
-
-.box-result{
     color: var(--dark-cyan-2);
+    align-items: center;
 }
 
 .box-result h4{
@@ -162,19 +168,34 @@ font-weight: bolder;
     margin: 20px 0;
 }
 
-/* @media only screen and (min-width: 1200px) {
-    .parent-container{
-        min-height: 100vh;
-    }
-
-    .container{
-        height: 100%;
-    }
-
-    .card{
+@media only screen and (min-width: 768px) {
+    .main-box{
         display: grid;
         grid-template-columns: 1fr 1fr;
-        margin: 0 70px;
+        grid-gap: 20px;
+        margin: 0;
         height: 100%;
+        border-radius: 30px;
     }
-} */
+
+    .select-tip-container{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .result-container {
+        margin-top: 0;
+        font-size: 25px;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .main-box{
+        margin: 0 200px;
+    }
+}
+
+@media only screen and (min-width: 1440px) {
+    .main-box {
+        margin: 0 200px;
+    }
+}
